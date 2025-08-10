@@ -24,3 +24,5 @@ urlpatterns = [
     path('api/products/',include('products.urls')),
     path('api/orders/',include('orders.urls')),
 ]
+#custom error handler
+handler404='restaurant_management.views.custom.404'
