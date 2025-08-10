@@ -1,0 +1,165 @@
+/*variables for theming*/
+:root{
+    --color-primary:rgb(255,111,97);
+    --color-primary-dark:rgb(204,89,76);
+    --color-text:rgb(51,51,51);
+    --color-background:rgb(255,248,240);
+    --color-white:rgb(225,255,255);
+    --color-grey-light:rgb(245,245,245);
+    --color-grey-medium:rgb(200,200,200);
+    --color-grey-dark:rgb(120,120,120);
+    --font-family-base:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    --border-radius:8px;
+    --box-shadow-light:0 2px 8px rgba(0,0,0,0.1);
+    --box-shadow-hover:0 8px 20px rgba(0,0,0,0.15);
+    --transition-speed:0.3s;
+    
+    }
+    /*reset & base styles*/
+    *,
+    *::before,
+    *::after{
+        box-sizing:border-box;
+    }
+
+    body{
+        font-family: var(--font-family-base);
+        background-color: var(--color-background);
+        color: var(--color-text);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        font-size: 16px;
+        -webkit-font-smoothing:antialized;
+        -moz-osx-font-smoothing:grayscale;
+    }
+
+    img{
+        max-width: 100%;
+        display: block;
+        height: auto;
+
+    }
+
+    /*layout Container*/
+
+    .container{
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+
+    }
+
+    /*header*/
+    header{
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        text-align:center ;
+        padding: 4rem 1rem 3rem;
+        box-shadow:var(--box-shadow-light) ;
+    }
+    header h1{
+        font-size: clamp(2rem ,5vw,3.5rem);
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+    }
+    header p{
+        font-size: clamp(1rem,2vw,1,3rem);
+        margin-bottom: 2rem;
+        font-weight: 400;
+        opacity: 0.9;
+    }
+    /* primary CTA button in header*/
+    header .btn{
+        background-color: var(--color-white);
+        color: var(--color-primary);
+        padding: 0.85rem 2.5rem;
+        font-weight: 700;
+        font-size: 1.125rem;
+        border-radius: var(--border-radius);
+        border: none;
+        cursor: pointer;
+        box-shadow: var(--box-shadow-light);
+        transition: background-color var(--transition-speed),color var(--transition-speed), box-shadow var(--transition-speed);
+
+    }
+    
+    header .btn:hover,
+    header .btn:focus{
+        background-color: var(--color-primary-dark);
+        color:var(--color-white);
+        box-shadow: var(--box-shadow-hover);
+        outline: none;
+    }
+
+    /*mian content-- cards section*/
+    .cards{
+        display: flex;
+        justify-content: space-between;
+        gap:2rem;
+        margin: 4rem 0;
+        flex-wrap: wrap;
+    }
+
+    /*each card*/
+    .card{
+        background-color: var(--color-white);
+        flex: 1 1 280px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow-light);
+        padding: 2rem 1.5rem;
+        text-align: center;
+        transition: transform var(--transition-speed),box-shadow var(--transition-speed);
+        cursor: default;
+        user-select: none;
+
+    }
+
+    .card:hover,
+    .card:focus-within{
+        transform: translate(-10px);
+        box-shadow: var(--box-shadow-hover);
+    }
+
+    .card h3{
+        color: var(--color-primary);
+        margin-bottom:1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .card p{
+        font-size: 1rem;
+        line-height: 1.4;
+        color: var(--color-grey-dark);
+
+    }
+    /*footer*/
+    footer{
+        background-color: var(--color-text);
+        color: var(--color-white);
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.03em;
+
+
+    }
+    /*responsive adjustment*/
+    @media(max-width:900px){
+        .cards{
+            flex-direction: column;
+            align-items: center;
+        }
+        .card{
+            max-width: 350px;
+        }
+        
+    }
+    /*accesiblity imporvements*/
+    button:focus-within{
+        outline: 3px solid var(--color-primary-dark);
+        outline-offset:2px;
+
+    }
