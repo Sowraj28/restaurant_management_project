@@ -6,5 +6,5 @@ def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE','restaurant_management.settings')
     execute_from_command_line(['manage.py','runserver'])
 
-if __name__=="main":
+if __name__=="__main__":
     main()
