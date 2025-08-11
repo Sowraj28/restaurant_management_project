@@ -19,3 +19,4 @@ def about(request):
         'image_url':about_info.image_url if about_info and about_info.image else None,
     }
     return render(request,'home/about.html',context)
+
