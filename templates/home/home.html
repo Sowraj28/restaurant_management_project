@@ -1,1 +1,8 @@
-{%extends%}
+{%extends 'home/base.html' %}
+{% block title %}{{restaurant_name}}{% endblock %}
+{% block content %}
+<h1> Welcome To {{restaurant_name}}</h1>
+{% if restaurant_tagline %}
+    <p>{{restaurant_tagline}}</p>
+{% endif %}
+{% endblock %}
