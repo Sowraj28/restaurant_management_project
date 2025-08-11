@@ -26,3 +26,15 @@ class About(models.Model):
         verbose_name_pural="About Sections"
     def __str__(self):
         return self.title
+
+class Contact(models.Model):
+    name=models.CharField(max_length=100,blank=True)
+    email=models.Emailfield()
+    phone=models.CharField(max_length=20,blank=True)
+    address=models.TextField(blank=True)
+    message=models.TextField(blank=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self): 
+        return f"{self.email} ({self.name})" if self.name else self.email
+
