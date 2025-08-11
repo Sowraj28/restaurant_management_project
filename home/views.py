@@ -21,3 +21,12 @@ def about(request):
     }
     return render(request,'home/about.html',context)
 
+def contact(request):
+    contact_info=Contact.objects.first()
+    context={
+        'title':'Contact US',
+        'email': contact_info.email if contact_info else 'contact@restaurant.com',
+        'phone':contact_info.phone if contact_info else '+91 8788328281',
+        'address':contact_info.address if contact_info else '123 foodstreet,floavur town ,USA'
+    }
+    return render(request,'home/contact.html',context)
