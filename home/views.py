@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Restaurant 
 from .models import About
+from .models import Contact
 
 # Create your views here.
 def homepage(request):
