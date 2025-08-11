@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<div style="
+    font-size:1,2rem;
+    color:#444;
+    max-width:600px;
+    margin:auto;
+    line-height:1.5;
+">
+    <p><strong>Email:</strong>{{ email }}</p>
+    <p><strong>Phone:</strong>{{ phone }}</p>
+    <p><strong>Address:</strong>{{ address }}</p>
+</div>
+{% endblock %}
