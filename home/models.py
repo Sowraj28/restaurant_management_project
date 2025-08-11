@@ -14,3 +14,15 @@ class Restaurant(models.Model):
 
         def __str__(self):
             return self.name
+
+class About(models.Model):
+    title=models.CharField(max_length=100,default="About Us")
+    description=models.TextField()
+    image=models.ImageField(upload_to='about_images/',blank=True,null=True)
+    updated_at=models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name="About"
+        verbose_name_pural="About Sections"
+    def __str__(self):
+        return self.title
