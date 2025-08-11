@@ -1,0 +1,11 @@
+{%extents 'home/base.html' %}
+{%block title%}{{title}}{%endblock%}
+{%block content%}
+<h1>{{title}}</h1>
+{% if image_url %}
+    <img src="{{image_url}}" alt="About Image"/>
+{%endif%}
+<p>{{description}}</p>
+
+
+{%endblock%}
