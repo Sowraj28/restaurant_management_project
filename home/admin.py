@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Restaurant
 from .models import About
+from .models import RestaurantInfo
 
 # Register your models here.
 @admin.register(Restaurant)
@@ -11,3 +12,5 @@ class RestaurantAdmin(admin.ModelAdmin):
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
     list_display=('title','updated_at')
+
+admin.site.register(RestaurantInfo)
