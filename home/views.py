@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Restaurant 
 from .models import About
 from .models import Contact
+from .models import RestaurantInfo
 
 # Create your views here.
 def homepage(request):
@@ -30,3 +31,9 @@ def contact(request):
         'address':contact_info.address if contact_info else '123 foodstreet,floavur town ,USA'
     }
     return render(request,'home/contact.html',context)
+
+def home(request):
+    restaurant=RestaurantInfo.objects.first()
+    return render(request,'home/home.html',{'restaurant':restaurant})
+
+
