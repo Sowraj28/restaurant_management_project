@@ -30,5 +30,10 @@
         {{restaurant_tagline}}
         </p>
     {% endif %}
+    {% if restaurant %}
+        <p>Contact us: {{restaurant.phone_number}}</p>
+    {% else %}
+    <p>Contact info not available</p>
+    {% endif%}
 </div>
 {% endblock %}
