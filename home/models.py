@@ -38,3 +38,10 @@ class Contact(models.Model):
     def __str__(self): 
         return f"{self.email} ({self.name})" if self.name else self.email
 
+class RestaurantInfo(models.Model):
+    name=models.CharField(max_length=100)
+    phone_number=models.CharField(max_length)
+
+    def __str__(self):
+        return self.name
+
