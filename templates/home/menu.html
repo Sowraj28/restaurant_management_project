@@ -5,6 +5,8 @@
 <h1>menu</h1>
 <ul>
     {% for item in menu_items %}
+    <li>{{ item.name}}-{{item.price}}</li>
+    {% endfor %}
 </ul>
 
 {% endblock %}
