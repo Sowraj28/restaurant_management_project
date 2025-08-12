@@ -40,7 +40,7 @@ class Contact(models.Model):
 
 class RestaurantInfo(models.Model):
     name=models.CharField(max_length=100)
-    phone_number=models.CharField(max_length)
+    phone_number=models.CharField(max_length=15)
 
     def __str__(self):
         return self.name
