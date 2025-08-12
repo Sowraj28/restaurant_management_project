@@ -36,4 +36,16 @@ def home(request):
     restaurant=RestaurantInfo.objects.first()
     return render(request,'home/home.html',{'restaurant':restaurant})
 
+def menu_view(request):
+    menu_items=[
+        {'name':'Margherita Pizza','price':8.99},
+        {'name':'spaghetti carbonara','price':12.99},
+        {'name':'Caser Salad','price':7.99},
+        {'name':'Tirumisu','price':5.99},
+    ]
+    context={
+        'menu_items'=menu_items
 
+    }
+    return render(request,'menu.html',context)
+    
