@@ -38,10 +38,10 @@ def home(request):
 
 def menu_view(request):
     menu_items=[
-        {'name':'Margherita Pizza','price':8.99},
-        {'name':'spaghetti carbonara','price':12.99},
-        {'name':'Caser Salad','price':7.99},
-        {'name':'Tirumisu','price':5.99},
+        {'name':'Margherita Pizza','price':8.99,'description':'Classic Cheese Pizzia with frsh basile'},
+        {'name':'spaghetti carbonara','price':12.99,'description':'spicy spaghetti with cheese souce'},
+        {'name':'Caser Salad','price':7.99,'description':'mixe with healty grains'},
+        {'name':'Tirumisu','price':5.99,'description':'the most Wanted sweet'},
     ]
     context={
         
