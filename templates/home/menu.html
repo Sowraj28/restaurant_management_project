@@ -1,12 +1,18 @@
 {% extents 'base.html' %}
-{% block title %}{}{% endblock %}
+{% block title %}Menu-{{restaurant_name}}{% endblock %}
 
 {% block content %}
-<h1>menu</h1>
-<ul>
-    {% for item in menu_items %}
-    <li>{{ item.name}}-{{item.price}}</li>
-    {% endfor %}
-</ul>
+<div>
+    <h1>Our Menu</h1>
+    <div>
+        {% for item in menu_item %}
+        <div>
+            <h2></h2>
+            <p></p>
+            <p></p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
