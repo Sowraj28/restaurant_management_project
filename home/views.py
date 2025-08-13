@@ -50,3 +50,8 @@ def menu_view(request):
     }
     return render(request,'menu.html',context)
     
+def reservations_view(request):
+    context={
+        "restaurant_name":"Flavor Town"
+    }
+    return render(request,"home/reservations.html",context)
