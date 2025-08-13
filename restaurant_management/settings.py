@@ -123,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DRIS=[
-    os.path.join(BASE_DIR,"styles"),
+    os.path.join(BASE_DIR,"static"),
 ]
 
 # Default primary key field type
