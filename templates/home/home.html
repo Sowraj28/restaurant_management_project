@@ -35,5 +35,19 @@
     {% else %}
     <p>Contact info not available</p>
     {% endif%}
+    <div  style="margin-top:2rem;text-align:center;">
+        <a  href="{% url 'menu' %}"style="
+            background:#ff6f61;
+            color:white;
+            padding:0.8 rem 1.5rem;
+            border: 6px;
+            text-decoration:none ;
+            font-wight:bold;
+            transition: background 0.3s ease ;
+        "
+        onmouseover="this.style.background='#e65a50'"
+        onmouseout="this.style.background='#ff6f61'"
+        >View Menu</a>
+    </div>
 </div>
 {% endblock %}
