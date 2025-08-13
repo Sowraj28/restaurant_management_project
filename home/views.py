@@ -44,7 +44,8 @@ def menu_view(request):
         {'name':'Tirumisu','price':5.99},
     ]
     context={
-        'menu_items'=menu_items
+        
+        'menu_items':menu_items
 
     }
     return render(request,'menu.html',context)
