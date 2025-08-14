@@ -11,6 +11,7 @@ def homepage(request):
     context={
         'restaurant_name':restaurant.name if restaurant else 'Restaurant Name Not Set',
         'restaurant_tagline':restaurant.tagline if restaurant else '',
+        'restaurant_logo':restaurant.logo.ulr if restaurant and restaurant.logo else None
     }
     return render(request,'home/home.html',context)
 
