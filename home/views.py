@@ -3,6 +3,7 @@ from .models import Restaurant
 from .models import About
 from .models import Contact
 from .models import RestaurantInfo
+from django.db import DatabaseError
 
 # Create your views here.
 def homepage(request):
@@ -14,7 +15,11 @@ def homepage(request):
     return render(request,'home/home.html',context)
 
 def about(request):
-    about_info=About.objects.firts()
+    try:
+        about_info=About.objects.firts()
+    except DatabaseError: 
+        about_info=None
+
     context={
         'title':about_info.title if about_info else "About Us",
         'description':about_info.description if about_info else "Description not set",
