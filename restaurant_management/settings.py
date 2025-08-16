@@ -139,3 +139,4 @@ MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 RESTAURANT_NAME="My Restaurant"
+RESTAURANT_HOURS="Mon-Fri: 11am - 9pm ,Sat-Sun: 10am - 10pm"
