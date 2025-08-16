@@ -64,7 +64,7 @@
         {% endblock %}
     </div>
     <footer>
-        &copy;{{ now.year}} {{ restaurant_name }} .All Rights Reserved!
+        <p>&copy;{{now|date:"Y"}} {{ setting.Restaurant_NAME }} .All Rights Reserved!</p>
     </footer>
 </body>
 </html>
