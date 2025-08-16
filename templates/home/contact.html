@@ -3,14 +3,43 @@
 
 {% block content %}
 <h1>{{ title }}</h1>
-<div style="
-    font-size: 1.2rem;
-    color: #444;
-    max-width: 600px;
-    margin: auto;
-    line-height: 1.5;">
-    <p><strong>Email:</strong>{{ email }}</p>
-    <p><strong>Phone:</strong>{{ phone }}</p>
-    <p><strong>Address:</strong>{{ address }}</p>
-</div>
+<form id="contactForm" method="post">
+    {% csrf_token %}
+    <input type="text" id="name" name="name" placeholder="Your Name">
+    <span id="nameError" class="error"></span>
+
+    <input type="email" id="email" name="email" placeholder="Your Email">
+    <span id="emailError" class="error"></span>
+
+    <textarea id="message" name="message" placeholder="Your Message"></textarea>
+    <button type="submit">Send</button>
+
+
+</form>
+<script>
+    document.getElementById("contactForm").addEventListener("sumbit",function(event){
+        let isvalid=true;
+
+        document.getElementById("nameError").innerText="";
+        document.getElementById("emailError").innerText="";
+
+        const name=document.getElementById("name").value.trim();
+        if (name ===""){
+            document.getElementById("nameError").innerText="Please Enter Your Name";
+            isvalid=false;
+        }
+        const email=document.getElementById("email").value.trim();
+        if (email ==""){
+            document.getElementById("emailError").innerText="Please Enter Your Email";
+            isvalid=false;
+        }
+
+        if (!isvalid){
+            event.preventDefault();
+        }
+
+
+    
+    });
+</script>
 {% endblock %}
