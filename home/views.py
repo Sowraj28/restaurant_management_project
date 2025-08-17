@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Restaurant 
 from .models import About
 from .models import Contact
 from .models import RestaurantInfo
 from django.db import DatabaseError
+from .forms import FeedbackForm
 
 # Create your views here.
 def homepage(request):
@@ -61,3 +62,6 @@ def reservations_view(request):
         "restaurant_name":"Flavor Town"
     }
     return render(request,"home/reservations.html",context)
+
+
+def
