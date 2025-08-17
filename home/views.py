@@ -64,4 +64,12 @@ def reservations_view(request):
     return render(request,"home/reservations.html",context)
 
 
-def 
+def feedback_view(request):
+    if request.method=="POST":
+        form=FeedbackForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request,"home/feedback_success.html")
+    else:
+        form=FeedbackForm()
+    return render(request,"home/feedback.html",{"form":form})
