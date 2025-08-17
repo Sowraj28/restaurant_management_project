@@ -64,4 +64,4 @@ def reservations_view(request):
     return render(request,"home/reservations.html",context)
 
 
-def
+def 
