@@ -63,3 +63,23 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.full_name or self.user.username
+
+
+class Menu(models.Model):
+    name=models.CharField(max_length=100)
+    price=models.DecimalField(max_digits=6,decimal_places=2)
+    description=models.TextField(blank=True)
+    available=models.BooleanField(default=True)
+
+
+    def __str__(self):
+        return self.name
+
+class Order(models.Model):
+    customer_name=models.CharField(max_length=100)
+    menu_item=models.Foreignkey(Menu,on_delete=models.CASCADE)
+    quantity=models.PositiveIntergerField(default=1)
+    created_at=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.customer_name}-{self.menu_item.name}"
