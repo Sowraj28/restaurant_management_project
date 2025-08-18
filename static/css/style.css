@@ -90,3 +90,31 @@ footer{
 footer p{
     margin: 5px 0;
 }
+
+
+.search_container{
+    margin-top: 2rem;
+    text-align: center;
+}
+.search_container input[type="text"]{
+    padding: 0.8rem;
+    width:60%;
+    max-width: 400px;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+.search_container button{
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color:white;
+    border:none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.search_container button:hover{
+    background-color: var(--primary-color-dark);
+}
