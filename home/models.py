@@ -76,10 +76,28 @@ class Menu(models.Model):
         return self.name
 
 class Order(models.Model):
-    customer_name=models.CharField(max_length=100)
-    menu_item=models.Foreignkey(Menu,on_delete=models.CASCADE)
-    quantity=models.PositiveIntergerField(default=1)
+    STATUS_CHOICE=[
+        ('PENDING','pending'),
+        ('PROCESSING','processing'),
+        ('COMPLETED','completed'),
+        ('CANCELLED','cancelled')
+    ]
+    customer=models.Foreginkey(User,on_delete=models.CASCADE)
+    total_amount=models.DecimalField(max_digit=8,decimal_places=2,default=0.00)
+    status=models.CharField(max_length=20,choices=STATUS_CHOICE,default='PENDING')
     created_at=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.customer_name}-{self.menu_item.name}"
+        return f"Order#{self.id} by{self.customer.username}-{self.status}"
+
+class OrderItem(models.Model):
+    order=models.Foreignkey(Order,on_delete=modles.CASCADE,related_name="items")
+    menu_item=models.Foreignkey(Menu,on_delete=models.CASCADE)
+    quantity=models.PositiveIntergerField(default=1)
+    
+
+    def __str__(self):
+        return f"{self.quantity}x{self.menu_item.name}"
+
+    def get_subtotal(self):
+        return self.menu_item.price*self.quantity
