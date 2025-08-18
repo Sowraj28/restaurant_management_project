@@ -5,7 +5,7 @@ from .models import Contact
 from .models import RestaurantInfo
 from django.db import DatabaseError
 from .forms import FeedbackForm
-
+from .models import Menu
 # Create your views here.
 def homepage(request):
     restaurant=Restaurant.objects.first()
@@ -44,18 +44,9 @@ def home(request):
     return render(request,'home/home.html',{'restaurant':restaurant})
 
 def menu_view(request):
-    menu_items=[
-        {'name':'Margherita Pizza','price':8.99,'description':'Classic Cheese Pizzia with frsh basile'},
-        {'name':'spaghetti carbonara','price':12.99,'description':'spicy spaghetti with cheese souce'},
-        {'name':'Caser Salad','price':7.99,'description':'mixe with healty grains'},
-        {'name':'Tirumisu','price':5.99,'description':'the most Wanted sweet'},
-    ]
-    context={
-        
-        'menu_items':menu_items
-
-    }
-    return render(request,'menu.html',context)
+    
+    menu_items=Menu.objects.all() 
+    return render(request,'menu.html',{'menu_items':menu_items})
     
 def reservations_view(request):
     context={
@@ -73,3 +64,4 @@ def feedback_view(request):
     else:
         form=FeedbackForm()
     return render(request,"home/feedback.html",{"form":form})
+
