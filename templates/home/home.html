@@ -25,6 +25,13 @@
     {% else %}
     <p>Contact info not available</p>
     {% endif %}
+
+    <div class="search_container">
+        <form method="get" action="#">
+            <input type="text" name="q" placeholder="Serach Menu items...">
+            <buttton type="submit">Search</buttton>
+        </form>
+    </div>
     <div  style="margin-top:2rem;text-align:center;">
         <a  href="{% url 'menu' %}" class="menu-btn"
         onmouseover="this.style.background='#e65a50'"
