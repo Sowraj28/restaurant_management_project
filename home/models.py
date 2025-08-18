@@ -56,4 +56,4 @@ class Feedback(models.Model):
 
 
 class Userprofile(models.Model):
-    name=models.CharField()
+    user=models.OneToOneField(User,on_delete=CAS)
