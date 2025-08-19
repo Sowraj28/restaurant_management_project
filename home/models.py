@@ -91,9 +91,9 @@ class Order(models.Model):
         return f"Order#{self.id} by{self.customer.username}-{self.status}"
 
 class OrderItem(models.Model):
-    order=models.Foreignkey(Order,on_delete=modles.CASCADE,related_name="items")
+    order=models.Foreignkey(Order,on_delete=models.CASCADE,related_name="items")
     menu_item=models.Foreignkey(Menu,on_delete=models.CASCADE)
-    quantity=models.PositiveIntergerField(default=1)
+    quantity=models.PositiveIntegerField(default=1)
     
 
     def __str__(self):
