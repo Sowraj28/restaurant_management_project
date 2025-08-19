@@ -24,6 +24,6 @@ class MenuAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display=('customer_name','menu_items','quantity','created_at')
+    list_display=('customer_name','menu_item','quantity','created_at')
     search_fields=('customer_name',)
     list_filter=('created_at',)
