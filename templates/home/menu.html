@@ -29,6 +29,9 @@
         <p style="text-align:center;color:#999;">No Menu items available at the moment</p>
         {% endfor %}
     </div>
+    <div style="text-align:center;margin-top:1.5rem;">
+        <a href="{% url 'restaurant:menu' %}" class="menu-btn">View Full Menu</a>
+    </div>
 </div>
 
 {% endblock %}
