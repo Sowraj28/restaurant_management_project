@@ -45,8 +45,12 @@ def home(request):
 
 def menu_view(request):
     
-    menu_items=Menu.objects.all() 
-    return render(request,'menu.html',{'menu_items':menu_items})
+    menu_items=Menu.objects.filter(available=True).order_by('name')
+    context={
+        'menu_items':menu_items,
+        'page_title':"Our Menu"
+    }
+    return render(request,'menu.html',context)
     
 def reservations_view(request):
     context={
