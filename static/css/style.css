@@ -118,3 +118,17 @@ footer p{
 .search_container button:hover{
     background-color: var(--primary-color-dark);
 }
+
+.form input{
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+
+}
+.contact-form h2{
+    color:#ff6f61;
+    margin-bottom: 1rem;
+}
