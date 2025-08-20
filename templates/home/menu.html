@@ -32,6 +32,18 @@
     <div style="text-align:center;margin-top:1.5rem;">
         <a href="{% url 'restaurant:menu' %}" class="menu-btn">View Full Menu</a>
     </div>
+    <div>
+        <form method="get" class="menu_filters">
+            <input type="text" name="q" placeholder="search dishes" value="{{ query|default:''}}">
+
+            <select name="sort">
+                <option value="name" {% if sort_by=="name" %}selected{% endif %}>sort by name</option>
+                <option value="price" {% if sort_by=="price"%}selected{% end if %}>sort by price</option>
+            </select>
+            <button type="submit">Apply</button>
+        </form>
+    </div>
 </div>
+
 
 {% endblock %}
