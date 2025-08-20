@@ -9,12 +9,17 @@ from .models import Menu
 # Create your views here.
 def homepage(request):
     restaurant=Restaurant.objects.first()
+    form=ContactForm(request.POST or None)
+    if request.method== "POST" and form.is_valid():
+        form.save()
+        return redirect('home')
     menu_items=Menu.objects.filter(available=True).order_by('name')[:6]
     context={
         'restaurant_name':getattr(setting,'RESTAURANT_NAME','Restaurant Name Not Set'),
         'restaurant_tagline':restaurant.tagline if restaurant else '',
         'restaurant_logo':restaurant.logo.ulr if restaurant and restaurant.logo else None,
-        'menu_items':menu_items
+        'menu_items':menu_items,
+        'form':form
     }
     return render(request,'home/home.html',context)
 
