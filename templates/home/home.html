@@ -38,6 +38,15 @@
         onmouseout="this.style.background='#ff6f61'"
         >View Menu</a>
     </div>
+    <div class="contact-form" style="margin-top:2rem;text-align:center;">
+        <h2>Contact US</h2>
+        <form method="post">
+            {% csrf_token %}
+            {% form.name %}
+            {% form.email %}
+            <button type="submit" class="menu-btn">Sumbit</button>
+        </form>
+    </div>
 </div>
 {% include 'restaurant/menu.html' %}
 {% endblock %}        
