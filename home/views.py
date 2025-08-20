@@ -46,11 +46,20 @@ def home(request):
     return render(request,'home/home.html',{'restaurant':restaurant})
 
 def menu_view(request):
+    query=request.GET.get('q')
+    sort_by=request.GET.get('sort','name')
     
-    menu_items=Menu.objects.filter(available=True).order_by('name')
+    menu_items=Menu.objects.filter(available=True)
+    if query:
+        menu_items=menu_items.filter(name_icontains=query)
+    if sort_by in ['name','price']:
+        menu_items=menu_items.order_by(sort_by)
     context={
         'menu_items':menu_items,
-        'page_title':"Our Menu"
+        'page_title':"Our Menu",
+        'query':query,
+        'sort_by':sort_by,
+
     }
     return render(request,'menu.html',context)
     
