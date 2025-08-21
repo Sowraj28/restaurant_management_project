@@ -47,6 +47,16 @@
             <button type="submit" class="menu-btn">Sumbit</button>
         </form>
     </div>
+    <div class="restaurant-address" style="margin-top:3rem;text-align:center;">
+        <h2>Find Us</h2>
+        <p>{{ restaurant_address}}</p>
+        <div style="margin:1rem auto;max-width:600px;">
+            <iframe 
+                src="https://www.google.com/maps/embed/v1/place?key=&q={{ restaurant_address|urlencode }}"width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+
+            </iframe>
+        </div>
+    </div>
 </div>
 {% include 'restaurant/menu.html' %}
 {% endblock %}        
