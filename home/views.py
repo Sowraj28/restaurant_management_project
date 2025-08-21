@@ -18,8 +18,9 @@ def homepage(request):
         'restaurant_name':getattr(setting,'RESTAURANT_NAME','Restaurant Name Not Set'),
         'restaurant_tagline':restaurant.tagline if restaurant else '',
         'restaurant_logo':restaurant.logo.ulr if restaurant and restaurant.logo else None,
+        'restaurant_address':restaurant.address if restaurant else 'Address Not available',
         'menu_items':menu_items,
-        'form':form
+        'form':form,
     }
     return render(request,'home/home.html',context)
 
