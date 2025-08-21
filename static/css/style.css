@@ -132,3 +132,13 @@ footer p{
     color:#ff6f61;
     margin-bottom: 1rem;
 }
+
+.restaurant-address h2{
+    color:#ff6f61;
+    margin-top: 0.5rem;
+
+}
+.restaurant-addressp{
+    font-size: 1.1rem;
+    color:#555;
+}
