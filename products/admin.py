@@ -11,3 +11,5 @@ class ItemAdmin(admin.ModelAdmin):
 admin.site.register(Item,ItemAdmin)
 
 @admin.register(Menu)
+class MenuItemAdmin(admin.ModelAdmin):
+    list_display=('name','price')
