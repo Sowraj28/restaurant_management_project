@@ -37,6 +37,7 @@ class Contact(models.Model):
     address=models.TextField(blank=True)
     message=models.TextField(blank=True)
     created_at=models.DateTimeField(auto_now_add=True)
+    submitted_at=models.DateTimeField(auto_now_add=True)
 
     def __str__(self): 
         return f"{self.email} ({self.name})" if self.name else self.email
