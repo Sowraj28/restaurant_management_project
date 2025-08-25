@@ -6,6 +6,7 @@ from .models import RestaurantInfo
 from django.db import DatabaseError
 from .forms import FeedbackForm
 from .models import Menu
+from .forms import ContactForm
 # Create your views here.
 def homepage(request):
     restaurant=Restaurant.objects.first()
@@ -86,3 +87,14 @@ def feedback_view(request):
         form=FeedbackForm()
     return render(request,"home/feedback.html",{"form":form})
 
+def contact_view(request):
+    if request.method=='POST':
+        form=ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("contact_success")
+    else:
+        form=ContantForm()
+    return render(request,"contact.html",{"form":form})
+def contact_success(request):
+    return render(request,"contact_success.html")
