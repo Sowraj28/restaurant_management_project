@@ -25,7 +25,7 @@
             <p style="color:#666;">{{ item.description }}</p>
             <p style="font-weight:bold;color:#ff6f61;">Rs.{{ item.price }}</p>
             {% if item.image %}
-                <img src="{{ item.image.url }}" alt="{{ item.name }}" width=200>
+                <img src="{{ item.image.url }}" alt="{{ item.name }}" width=200 class="menu-img">
             {% endif %}
         </div>
         {%  empty %}
