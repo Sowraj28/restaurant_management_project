@@ -6,7 +6,7 @@ from .models import Menu,Order
 # Register your models here.
 @admin.register(Restaurant)
 class RestaurantAdmin(admin.ModelAdmin):
-    list_display=('name','tagline','created_at','updated_at')
+    list_display=('name','tagline','created_at','updated_at','city','state')
     search_fields=('name','tagline')
     
 @admin.register(About)
