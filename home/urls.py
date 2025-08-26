@@ -10,3 +10,5 @@ urlpatterns = [
     path('menu/',views.menu_view,name='menu'),
     path('feedback/',views.feedback_view,name='feedback')
 ]
+if setting.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL,document_root=setting.MEDIa_ROOT)
