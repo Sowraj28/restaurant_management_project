@@ -92,6 +92,12 @@ def contact_view(request):
         form=ContactForm(request.POST)
         if form.is_valid():
             form.save()
+            subject=f"New contact form submission from {submission.name}"
+            message=f"You have recevide an new message"
+            name={submission.name}
+            email={submissiom.email}
+            message={submission.message}
+            
             return redirect("contact_success")
     else:
         form=ContantForm()
