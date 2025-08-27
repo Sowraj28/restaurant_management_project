@@ -15,6 +15,12 @@ def homepage(request):
         form.save()
         return redirect('home')
     menu_items=Menu.objects.filter(available=True).order_by('name')[:6]
+    query=request.Get.get("q")
+    if query:
+        menu_items=MenuItem.objects.filter(name_icontains=query)
+
+    else:
+        menu_items=MenuItem.objects.all()
     context={
         'restaurant_name':getattr(setting,'RESTAURANT_NAME','Restaurant Name Not Set'),
         'restaurant_tagline':restaurant.tagline if restaurant else '',
@@ -22,6 +28,7 @@ def homepage(request):
         'restaurant_address':restaurant.address if restaurant else 'Address Not available',
         'menu_items':menu_items,
         'form':form,
+        'query':query
     }
     return render(request,'home/home.html',context)
 
