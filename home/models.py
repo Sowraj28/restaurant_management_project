@@ -8,7 +8,7 @@ class Restaurant(models.Model):
     logo=models.ImageField(upload_to='restaurant_logos/',blank=True,null=True)
     Create_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
-    address=models.TextField(blank=True ,null=True)
+    address=models.TextField(blank=True,null=True)
     city=models.CharField(max_length=100)
     state=models.CharField(max_length=100)
 
