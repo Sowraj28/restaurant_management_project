@@ -26,4 +26,9 @@ class ItemView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-def homepage()
+def homepage(request):
+    card_count=0
+    if request.user.is_authenticated:
+        card_count=CardItem.objects.filter(user=request.user).count()
+
+    return render(request,"home.html",{"card_count":card_count})
