@@ -163,3 +163,8 @@ footer p{
     border-radius: 6px;
 
 }
+.restaurant_logo{
+    max-width: 150px;
+    margin-bottom: 15px;
+    height: auto;
+}
