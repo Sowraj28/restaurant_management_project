@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import user
 
-from .models import Item
+from .models import Item,
 from .serializers import ItemSerializer
 
 '''
@@ -26,10 +26,4 @@ class ItemView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class CartItem(models.Model):
-    user=models.foreginkey(User,on_delete=models.CASADE)
-    item_name=models.CharField(max_lenght=200)
-    quantity=models.PositiveIntegerField(default=1)
-
-    def __str__(self):
-        returnf"{self.item_name} {self.quantity}"
+def homepage()
