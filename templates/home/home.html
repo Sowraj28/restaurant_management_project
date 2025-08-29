@@ -54,6 +54,11 @@
     <div class="restaurant-address" style="margin-top:3rem;text-align:center;">
         <h2>Find Us</h2>
         <p>{{ restaurant_address}}</p>
+        <div class="restaurant-contact">
+            {% if restaurant.phone %}
+                <p><strong>Phone:</strong>{{ restaurant.phone }}</p>
+            {% endif %}
+        </div>
         <div style="margin:1rem auto;max-width:600px;">
             <iframe 
                 src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS-API_KEY&q={{ restaurant_address|urlencode }}"width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
