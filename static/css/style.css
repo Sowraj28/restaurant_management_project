@@ -168,3 +168,10 @@ footer p{
     margin-bottom: 15px;
     height: auto;
 }
+.restauran-contact{
+    font-size: 16px ;
+    margin-top: 10px;
+}
+.restauran-contact strong{
+    color:#333;
+}
