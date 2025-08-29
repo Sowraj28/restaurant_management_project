@@ -5,12 +5,13 @@ from django.contrib.auth.models import User
 class Restaurant(models.Model):
     name=models.CharField(max_length=100,unique=True)
     tagline=models.CharField(max_length=255,blank=True,null=True)
-    logo=models.ImageField(upload_to='restaurant_logos/',blank=True,null=True)
+    logo=models.ImageField(upload_to="restaurant_logos/",blank=True,null=True)
     Create_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
     address=models.TextField(blank=True,null=True)
     city=models.CharField(max_length=100)
     state=models.CharField(max_length=100)
+    phone=models.CharField(max_lenght=20,null=True,blank=True)
 
     class Meta:
         verbose_name="Restaurant"
